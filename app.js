@@ -13,7 +13,11 @@ window.onkeydown = e => {
     //when the transtion end then remove the animation class so that it return to its original look
     selectedDiv.addEventListener('transitionend' , function(){
       selectedDiv.classList.remove('playing');
-    }) 
+    });
+    //used for older versions of safari
+    selectedDiv.addEventListener('webkitTransitionEnd' , function(){
+        selectedDiv.classList.remove('playing');
+      });
   
     }
 
